@@ -544,7 +544,7 @@ def main():
     cfg.CONF.register_opts(DhcpLeaseRelay.OPTS)
     cfg.CONF.register_opts(dhcp.OPTS)
     cfg.CONF.register_opts(interface.OPTS)
-    cfg.CONF(args=sys.argv, project='quantum')
+    cfg.CONF(args=sys.argv[1:], project='quantum')
     config.setup_logging(cfg.CONF)
 
     mgr = DhcpAgent(cfg.CONF)

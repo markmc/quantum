@@ -207,7 +207,7 @@ def main():
     eventlet.monkey_patch()
     cfg.CONF.register_opts(UnixDomainMetadataProxy.OPTS)
     cfg.CONF.register_opts(MetadataProxyHandler.OPTS)
-    cfg.CONF(args=sys.argv, project='quantum')
+    cfg.CONF(args=sys.argv[1:], project='quantum')
     config.setup_logging(cfg.CONF)
 
     proxy = UnixDomainMetadataProxy(cfg.CONF)

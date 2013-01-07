@@ -164,7 +164,7 @@ def main():
     eventlet.monkey_patch()
 
     conf = setup_conf()
-    conf(sys.argv)
+    conf(sys.argv[1:])
 
     # Identify namespaces that are candidates for deletion.
     candidates = [ns for ns in

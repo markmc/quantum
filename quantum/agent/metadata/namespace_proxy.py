@@ -149,8 +149,8 @@ def main():
                    help="TCP Port to listen for metadata server requests."),
     ]
 
-    cfg.CONF.register_opts(opts)
-    cfg.CONF(args=sys.argv, project='quantum')
+    cfg.CONF.register_cli_opts(opts)
+    cfg.CONF(args=sys.argv[1:], project='quantum')
     config.setup_logging(cfg.CONF)
 
     proxy = ProxyDaemon(cfg.CONF.pid_file,

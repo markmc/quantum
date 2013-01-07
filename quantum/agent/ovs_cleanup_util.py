@@ -43,7 +43,7 @@ def setup_conf():
     ]
 
     conf = cfg.CommonConfigOpts()
-    conf.register_opts(opts)
+    conf.register_cli_opts(opts)
     conf.register_opts(l3_agent.L3NATAgent.OPTS)
     conf.register_opts(interface.OPTS)
     config.setup_logging(conf)
@@ -57,7 +57,7 @@ def main():
     """
 
     conf = setup_conf()
-    conf(sys.argv)
+    conf(sys.argv[1:])
 
     configuration_bridges = set([conf.ovs_integration_bridge,
                                  conf.external_network_bridge])
