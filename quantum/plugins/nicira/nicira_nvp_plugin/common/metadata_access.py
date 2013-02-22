@@ -18,12 +18,12 @@
 # @author: Salvatore Orlando, VMware
 
 import netaddr
+from oslo.config import cfg
 
 from quantum.api.v2 import attributes
 from quantum.common import constants
 from quantum.common import exceptions as q_exc
 from quantum.db import l3_db
-from quantum.openstack.common import cfg
 from quantum.openstack.common import log as logging
 from quantum.openstack.common.notifier import api as notifier_api
 from quantum.plugins.nicira.nicira_nvp_plugin.common import (exceptions
